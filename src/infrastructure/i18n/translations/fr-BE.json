@@ -1,0 +1,186 @@
+{
+  "app": {
+    "name": "EduERP",
+    "tagline": "Simulation pour l'éducation",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter",
+    "import": "Importer",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "logout": "Se déconnecter"
+  },
+  "auth": {
+    "login_google": "Se connecter avec Google",
+    "login_microsoft": "Se connecter avec Microsoft",
+    "login_subtitle": "Utilisez votre compte scolaire pour vous connecter",
+    "login_error": "Connexion échouée. Veuillez réessayer.",
+    "logout_confirm": "Êtes-vous sûr de vouloir vous déconnecter ?",
+    "session_expired": "Votre session a expiré. Veuillez vous reconnecter.",
+    "account_disabled": "Votre compte est désactivé. Veuillez contacter votre enseignant.",
+    "invalid_domain": "Cette adresse e-mail n'est pas autorisée. Utilisez votre compte scolaire."
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "simulation": "Simulation",
+    "achievements": "Réalisations",
+    "leaderboard": "Classement",
+    "messages": "Messages",
+    "friends": "Amis",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "admin": "Administration",
+    "classes": "Classes",
+    "users": "Utilisateurs"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {name} !",
+    "xp_label": "XP",
+    "level_label": "Niveau",
+    "streak_label": "Série",
+    "streak_days": "{days} jour(s)",
+    "quick_actions": "Actions rapides",
+    "recent_activity": "Activité récente",
+    "my_company": "Mon Entreprise",
+    "start_simulation": "Démarrer la simulation",
+    "no_activity": "Aucune activité pour l'instant"
+  },
+  "simulation": {
+    "title": "Simulation d'entreprise",
+    "company_name": "Nom de l'entreprise",
+    "sector": "Secteur",
+    "turn": "Tour",
+    "budget": "Budget",
+    "revenue": "Chiffre d'affaires",
+    "profit": "Bénéfice",
+    "loss": "Perte",
+    "employees": "Employés",
+    "start": "Démarrer la simulation",
+    "pause": "Mettre en pause",
+    "resume": "Reprendre",
+    "end_turn": "Terminer le tour",
+    "decision_required": "Décision requise",
+    "market_update": "Mise à jour du marché",
+    "modules": {
+      "finance": "Finance",
+      "sales": "Ventes",
+      "inventory": "Inventaire",
+      "hr": "Ressources humaines",
+      "marketing": "Marketing",
+      "logistics": "Logistique"
+    }
+  },
+  "gamification": {
+    "level_up": "Niveau supérieur !",
+    "new_level": "Niveau {level} atteint !",
+    "achievement_unlocked": "Réalisation débloquée !",
+    "xp_earned": "+{xp} XP gagnés",
+    "streak_continue": "Série continuée : {days} jours !",
+    "streak_broken": "Votre série est interrompue",
+    "daily_bonus": "Bonus quotidien",
+    "achievements": {
+      "title": "Réalisations",
+      "unlocked": "Débloqué",
+      "locked": "Verrouillé",
+      "progress": "Progression",
+      "no_achievements": "Aucune réalisation débloquée pour l'instant"
+    },
+    "leaderboard": {
+      "title": "Classement",
+      "rank": "Rang",
+      "player": "Joueur",
+      "xp": "XP",
+      "level": "Niveau",
+      "streak": "Série",
+      "no_data": "Pas encore de données de classement"
+    }
+  },
+  "messaging": {
+    "title": "Messages",
+    "new_message": "Nouveau message",
+    "send": "Envoyer",
+    "placeholder": "Tapez un message...",
+    "no_conversations": "Aucune conversation",
+    "no_messages": "Aucun message dans cette conversation pour l'instant",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "typing": "{name} est en train d'écrire...",
+    "delivered": "Livré",
+    "read": "Lu"
+  },
+  "social": {
+    "friends": "Amis",
+    "add_friend": "Ajouter un ami",
+    "remove_friend": "Supprimer un ami",
+    "friend_request": "Demande d'amitié",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "no_friends": "Pas encore d'amis",
+    "search_users": "Rechercher des utilisateurs"
+  },
+  "profile": {
+    "title": "Profil",
+    "edit_profile": "Modifier le profil",
+    "display_name": "Nom d'affichage",
+    "email": "Adresse e-mail",
+    "role": "Rôle",
+    "school": "École",
+    "joined": "Membre depuis",
+    "stats": "Statistiques",
+    "settings": {
+      "title": "Paramètres",
+      "language": "Langue",
+      "theme": "Thème",
+      "theme_dark": "Sombre",
+      "theme_light": "Clair",
+      "notifications": "Notifications",
+      "save_success": "Paramètres enregistrés",
+      "save_error": "Erreur lors de l'enregistrement des paramètres"
+    },
+    "roles": {
+      "student": "Élève",
+      "teacher": "Enseignant",
+      "admin": "Administrateur"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "users": {
+      "title": "Gestion des utilisateurs",
+      "add_user": "Ajouter un utilisateur",
+      "deactivate": "Désactiver",
+      "activate": "Activer",
+      "role_changed": "Rôle modifié",
+      "no_users": "Aucun utilisateur trouvé"
+    },
+    "classes": {
+      "title": "Gestion des classes",
+      "add_class": "Ajouter une classe",
+      "class_name": "Nom de la classe",
+      "year": "Année scolaire",
+      "students": "Élèves",
+      "no_classes": "Aucune classe trouvée"
+    }
+  },
+  "errors": {
+    "network": "Erreur réseau. Vérifiez votre connexion.",
+    "server": "Erreur serveur. Veuillez réessayer plus tard.",
+    "not_found": "Non trouvé.",
+    "unauthorized": "Non autorisé.",
+    "forbidden": "Accès refusé.",
+    "validation": "Saisie invalide. Veuillez vérifier les champs.",
+    "unknown": "Une erreur inconnue s'est produite."
+  }
+}

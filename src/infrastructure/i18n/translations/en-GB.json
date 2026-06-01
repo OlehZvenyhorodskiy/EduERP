@@ -1,0 +1,186 @@
+{
+  "app": {
+    "name": "EduERP",
+    "tagline": "Simulation for education",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Log out"
+  },
+  "auth": {
+    "login_google": "Sign in with Google",
+    "login_microsoft": "Sign in with Microsoft",
+    "login_subtitle": "Use your school account to sign in",
+    "login_error": "Sign in failed. Please try again.",
+    "logout_confirm": "Are you sure you want to log out?",
+    "session_expired": "Your session has expired. Please log in again.",
+    "account_disabled": "Your account is disabled. Please contact your teacher.",
+    "invalid_domain": "This email address is not allowed. Use your school account."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "simulation": "Simulation",
+    "achievements": "Achievements",
+    "leaderboard": "Leaderboard",
+    "messages": "Messages",
+    "friends": "Friends",
+    "profile": "Profile",
+    "settings": "Settings",
+    "admin": "Administration",
+    "classes": "Classes",
+    "users": "Users"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}!",
+    "xp_label": "XP",
+    "level_label": "Level",
+    "streak_label": "Streak",
+    "streak_days": "{days} day(s)",
+    "quick_actions": "Quick actions",
+    "recent_activity": "Recent activity",
+    "my_company": "My Company",
+    "start_simulation": "Start simulation",
+    "no_activity": "No activity yet"
+  },
+  "simulation": {
+    "title": "Business Simulation",
+    "company_name": "Company name",
+    "sector": "Sector",
+    "turn": "Turn",
+    "budget": "Budget",
+    "revenue": "Revenue",
+    "profit": "Profit",
+    "loss": "Loss",
+    "employees": "Employees",
+    "start": "Start simulation",
+    "pause": "Pause",
+    "resume": "Resume",
+    "end_turn": "End turn",
+    "decision_required": "Decision required",
+    "market_update": "Market update",
+    "modules": {
+      "finance": "Finance",
+      "sales": "Sales",
+      "inventory": "Inventory",
+      "hr": "Human Resources",
+      "marketing": "Marketing",
+      "logistics": "Logistics"
+    }
+  },
+  "gamification": {
+    "level_up": "Level up!",
+    "new_level": "Level {level} reached!",
+    "achievement_unlocked": "Achievement unlocked!",
+    "xp_earned": "+{xp} XP earned",
+    "streak_continue": "Streak continued: {days} days!",
+    "streak_broken": "Your streak was broken",
+    "daily_bonus": "Daily bonus",
+    "achievements": {
+      "title": "Achievements",
+      "unlocked": "Unlocked",
+      "locked": "Locked",
+      "progress": "Progress",
+      "no_achievements": "No achievements unlocked yet"
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "rank": "Rank",
+      "player": "Player",
+      "xp": "XP",
+      "level": "Level",
+      "streak": "Streak",
+      "no_data": "No leaderboard data yet"
+    }
+  },
+  "messaging": {
+    "title": "Messages",
+    "new_message": "New message",
+    "send": "Send",
+    "placeholder": "Type a message...",
+    "no_conversations": "No conversations",
+    "no_messages": "No messages in this conversation yet",
+    "online": "Online",
+    "offline": "Offline",
+    "typing": "{name} is typing...",
+    "delivered": "Delivered",
+    "read": "Read"
+  },
+  "social": {
+    "friends": "Friends",
+    "add_friend": "Add friend",
+    "remove_friend": "Remove friend",
+    "friend_request": "Friend request",
+    "accept": "Accept",
+    "decline": "Decline",
+    "no_friends": "No friends yet",
+    "search_users": "Search users"
+  },
+  "profile": {
+    "title": "Profile",
+    "edit_profile": "Edit profile",
+    "display_name": "Display name",
+    "email": "Email address",
+    "role": "Role",
+    "school": "School",
+    "joined": "Member since",
+    "stats": "Statistics",
+    "settings": {
+      "title": "Settings",
+      "language": "Language",
+      "theme": "Theme",
+      "theme_dark": "Dark",
+      "theme_light": "Light",
+      "notifications": "Notifications",
+      "save_success": "Settings saved",
+      "save_error": "Error saving settings"
+    },
+    "roles": {
+      "student": "Student",
+      "teacher": "Teacher",
+      "admin": "Administrator"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "users": {
+      "title": "User management",
+      "add_user": "Add user",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "role_changed": "Role changed",
+      "no_users": "No users found"
+    },
+    "classes": {
+      "title": "Class management",
+      "add_class": "Add class",
+      "class_name": "Class name",
+      "year": "School year",
+      "students": "Students",
+      "no_classes": "No classes found"
+    }
+  },
+  "errors": {
+    "network": "Network error. Check your connection.",
+    "server": "Server error. Please try again later.",
+    "not_found": "Not found.",
+    "unauthorized": "Unauthorised.",
+    "forbidden": "Access denied.",
+    "validation": "Invalid input. Please check the fields.",
+    "unknown": "An unknown error occurred."
+  }
+}

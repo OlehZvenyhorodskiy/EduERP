@@ -1,0 +1,59 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Qt Creator & Qt Build artifacts
+*.user
+*.user.*
+build/
+build-*/
+cmake-build-*/
+out/
+dist/
+bin/
+obj/
+Makefile
+*.log
+
+# Caching & Databases
+*.db
+*.sqlite
+eduerp_cache.db
+
+# VS Code & IDE settings
+.vscode/
+.idea/
+.vs/
+.agent
+.gemini
+.gsd
+
+# Temporary/Backup files
+*~
+*.swp
+*.tmp

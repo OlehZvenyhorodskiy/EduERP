@@ -1,0 +1,17 @@
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+CMake Error at CMakeLists.txt:33 (find_package):
+  Could not find a package configuration file provided by "SQLiteCpp" with
+  any of the following names:
+
+    SQLiteCppConfig.cmake
+    sqlitecpp-config.cmake
+
+  Add the installation prefix of "SQLiteCpp" to CMAKE_PREFIX_PATH or set
+  "SQLiteCpp_DIR" to a directory containing one of the above files.  If
+  "SQLiteCpp" provides a separate development package or SDK, be sure it has
+  been installed.
+
+
+-- Configuring incomplete, errors occurred!

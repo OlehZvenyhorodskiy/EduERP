@@ -1,0 +1,11 @@
+{
+  "name": "eduerp",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "sqlitecpp",
+    "nlohmann-json",
+    "spdlog",
+    "gtest",
+    "jwt-cpp"
+  ]
+}

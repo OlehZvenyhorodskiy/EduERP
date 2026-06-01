@@ -1,0 +1,133 @@
+name: EduERP CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}/eduerp-server
+
+jobs:
+  # ─────────────────────────
+  # Job 1: Go Backend
+  # ─────────────────────────
+  backend:
+    name: Backend (Go)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go 1.24
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache-dependency-path: server/go.sum
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Vet (static analysis)
+        run: go vet ./...
+
+      - name: Run Go tests
+        run: go test ./... -v -timeout 60s -race
+        env:
+          DATABASE_URL: '' # No DB required for unit tests
+
+      - name: Build server binary
+        run: go build -ldflags="-s -w -X main.version=${{ github.sha }}" -o eduerp-server ./cmd/api
+
+  # ─────────────────────────
+  # Job 2: Qt Client (Windows)
+  # ─────────────────────────
+  client:
+    name: Qt Client (Windows)
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Qt 6.8.2
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.2'
+          modules: 'qtwebsockets qtcharts'
+          cache: true
+
+      - name: Setup vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgGitCommitId: 'a34c873a9717a888f58dc05268dea15592c2f822'
+          runVcpkgInstall: true
+
+      - name: Configure CMake (Release)
+        run: >
+          cmake -B build -S .
+          -DCMAKE_BUILD_TYPE=Release
+          -DEDUERP_BUILD_TESTS=ON
+          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Run C++ Tests
+        run: ctest --test-dir build -C Release --output-on-failure
+
+      - name: Upload Windows Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eduerp-windows-${{ github.sha }}
+          path: build/Release/EduERP.exe
+          retention-days: 14
+
+  # ─────────────────────────
+  # Job 3: Docker Deploy (main only)
+  # ─────────────────────────
+  deploy:
+    name: Deploy Server (Docker)
+    runs-on: ubuntu-latest
+    needs: [backend, client]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=sha-
+            type=raw,value=latest
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./server
+          file: ./server/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

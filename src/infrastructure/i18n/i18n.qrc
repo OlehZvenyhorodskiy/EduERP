@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/i18n">
+        <file alias="translations/nl-BE.json">translations/nl-BE.json</file>
+        <file alias="translations/en-GB.json">translations/en-GB.json</file>
+        <file alias="translations/fr-BE.json">translations/fr-BE.json</file>
+    </qresource>
+</RCC>
