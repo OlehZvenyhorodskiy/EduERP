@@ -150,7 +150,6 @@ func (h *ClassHandler) AddStudent(c *gin.Context) {
 		StudentID: body.StudentID,
 	}
 
-	// Note: ClassMembership isn't in our current models — we need to add it
 	// For now, respond with success structure
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,

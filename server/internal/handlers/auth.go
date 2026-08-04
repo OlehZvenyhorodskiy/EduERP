@@ -295,7 +295,6 @@ func exchangeOAuthCode(provider, code, codeVerifier, redirectURI string, cfg *co
 // exchangeGoogleCode exchanges an authorization code with Google's OAuth2 token endpoint
 // using PKCE (RFC 7636), then fetches the user profile from the userinfo endpoint.
 func exchangeGoogleCode(code, codeVerifier, redirectURI string, cfg *config.Config) (email, displayName, oauthSubject string, err error) {
-	// Step 1: Exchange code for tokens
 	formData := url.Values{
 		"code":          {code},
 		"client_id":     {cfg.GoogleClientID},
@@ -324,7 +323,6 @@ func exchangeGoogleCode(code, codeVerifier, redirectURI string, cfg *config.Conf
 		return "", "", "", fmt.Errorf("google token parse error: %w", err)
 	}
 
-	// Step 2: Fetch user profile from Google userinfo endpoint
 	userInfoReq, _ := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
 	userInfoReq.Header.Set("Authorization", "Bearer "+tokenResp.AccessToken)
 
@@ -359,7 +357,6 @@ func exchangeGoogleCode(code, codeVerifier, redirectURI string, cfg *config.Conf
 // exchangeMicrosoftCode exchanges an authorization code with Microsoft's OAuth2 token endpoint
 // using PKCE (RFC 7636), then fetches the user profile from the Microsoft Graph /me endpoint.
 func exchangeMicrosoftCode(code, codeVerifier, redirectURI string, cfg *config.Config) (email, displayName, oauthSubject string, err error) {
-	// Step 1: Exchange code for tokens
 	tokenURL := fmt.Sprintf(
 		"https://login.microsoftonline.com/%s/oauth2/v2.0/token",
 		cfg.MicrosoftTenantID,
@@ -393,7 +390,6 @@ func exchangeMicrosoftCode(code, codeVerifier, redirectURI string, cfg *config.C
 		return "", "", "", fmt.Errorf("microsoft token parse error: %w", err)
 	}
 
-	// Step 2: Fetch user profile from Microsoft Graph
 	graphReq, _ := http.NewRequest("GET", "https://graph.microsoft.com/v1.0/me", nil)
 	graphReq.Header.Set("Authorization", "Bearer "+tokenResp.AccessToken)
 

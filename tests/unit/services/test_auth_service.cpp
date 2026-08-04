@@ -11,7 +11,6 @@
 // No Qt dependency — these are string/crypto algorithms only.
 // ---------------------------------------------------------------------------
 
-// ── extractDomain — mirrors auth.go helper ──
 static std::string extractDomain(const std::string& email) {
     for (int i = static_cast<int>(email.size()) - 1; i >= 0; --i) {
         if (email[i] == '@') {
@@ -21,14 +20,12 @@ static std::string extractDomain(const std::string& email) {
     return "";
 }
 
-// ── isValidEmail — basic RFC 5322 lite check ──
 static bool isValidEmail(const std::string& email) {
     // Must contain exactly one @, non-empty local and domain parts
     std::regex pattern(R"([^@\s]+@[^@\s]+\.[^@\s]+)");
     return std::regex_match(email, pattern);
 }
 
-// ── PKCE code verifier validation ──
 // RFC 7636: 43–128 chars, charset: A-Z a-z 0-9 - . _ ~
 static bool isValidCodeVerifier(const std::string& verifier) {
     if (verifier.size() < 43 || verifier.size() > 128) return false;
@@ -40,7 +37,6 @@ static bool isValidCodeVerifier(const std::string& verifier) {
     return true;
 }
 
-// ── JWT structure check ──
 // A well-formed JWT has exactly 3 base64url segments separated by dots.
 static bool hasJwtStructure(const std::string& token) {
     size_t first = token.find('.');

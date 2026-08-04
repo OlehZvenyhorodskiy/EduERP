@@ -96,7 +96,6 @@ private:
     static std::unordered_map<std::string, TemplateSeedData> buildTemplates() {
         std::unordered_map<std::string, TemplateSeedData> m;
 
-        // ── Belgian SME (Default) ──
         m["belgian_sme"] = {
             "belgian_sme", "Belgisch KMO", "Klein/middelgroot bedrijf", 100000.0,
             {100000.0, 1200.0, 350.0, 200.0, 0.25},
@@ -116,7 +115,6 @@ private:
             {{"Kantoor", "Brussel", 500, 300.0}}
         };
 
-        // ── Retail Clothing ──
         m["retail_clothing"] = {
             "retail_clothing", "Kledingwinkel", "Detailhandel in mode", 120000.0,
             {120000.0, 2500.0, 450.0, 300.0, 0.25},
@@ -142,7 +140,6 @@ private:
             {{"Winkel + Magazijn", "Antwerpen", 5000, 500.0}}
         };
 
-        // ── Tech Hardware ──
         m["tech_hardware"] = {
             "tech_hardware", "Tech Hardware", "Computerapparatuur", 200000.0,
             {200000.0, 3000.0, 800.0, 500.0, 0.25},
@@ -170,7 +167,6 @@ private:
             {{"Magazijn Mechelen", "Mechelen", 10000, 800.0}}
         };
 
-        // ── Food & Beverage ──
         m["food_beverage"] = {
             "food_beverage", "Horeca", "Eten en drinken", 80000.0,
             {80000.0, 3500.0, 600.0, 400.0, 0.25},
@@ -195,7 +191,6 @@ private:
             {{"Keuken + Opslag", "Brugge", 2000, 400.0}}
         };
 
-        // ── E-commerce Marketplace ──
         m["ecommerce_marketplace"] = {
             "ecommerce_marketplace", "E-commerce", "Online marktplaats", 150000.0,
             {150000.0, 500.0, 200.0, 350.0, 0.25},
@@ -220,7 +215,6 @@ private:
             {{"Fulfillment Center", "Luik", 20000, 1200.0}}
         };
 
-        // ── Logistics Delivery ──
         m["logistics_delivery"] = {
             "logistics_delivery", "Logistiek", "Bezorg- en transportdiensten", 250000.0,
             {250000.0, 4000.0, 1200.0, 800.0, 0.25},
@@ -244,7 +238,6 @@ private:
             }
         };
 
-        // ── Accounting Services ──
         m["accounting_services"] = {
             "accounting_services", "Boekhouding", "Accountancykantoor", 60000.0,
             {60000.0, 1500.0, 300.0, 250.0, 0.25},

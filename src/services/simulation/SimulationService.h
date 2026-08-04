@@ -151,7 +151,6 @@ public:
         return it != m_engines.end() ? it->second.get() : nullptr;
     }
 
-    // ── KPI Snapshot ──
     struct KPISnapshot {
         double revenue = 0;
         double expenses = 0;

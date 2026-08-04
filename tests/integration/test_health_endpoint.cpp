@@ -16,7 +16,6 @@
 //   curl http://localhost:8080/health      (manual verification)
 // ---------------------------------------------------------------------------
 
-// ── Simulated health check response ──
 struct HealthResponse {
     std::string status;
     std::string version;
@@ -28,7 +27,6 @@ struct HealthResponse {
     }
 };
 
-// ── Simulated login response shape ──
 struct LoginResponse {
     bool success;
     std::string accessToken;
@@ -45,7 +43,6 @@ struct LoginResponse {
     }
 };
 
-// ── Simulated gamification state shape ──
 struct GamificationState {
     int userId;
     int currentXp;

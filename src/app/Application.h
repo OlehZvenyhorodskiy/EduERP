@@ -75,7 +75,6 @@ private:
         m_translator->setLocale(QString::fromStdString(
             m_config->getString("default_language", "nl-BE")));
 
-        // Initialize gamification
         m_gamificationService = std::make_unique<services::GamificationService>(this);
         m_gamificationService->registerDailyLogin(); // register streak on app launch
     }

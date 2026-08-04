@@ -39,8 +39,6 @@ public:
         initializeAchievements();
     }
 
-    // ── XP & Levels ──
-
     int currentXP() const { return m_currentXP; }
     int currentLevel() const { return m_currentLevel; }
     int xpForNextLevel() const { return xpRequiredForLevel(m_currentLevel + 1); }
@@ -68,8 +66,6 @@ public:
         saveState();
         emit xpChanged();
     }
-
-    // ── Streaks ──
 
     int currentStreak() const { return m_currentStreak; }
     int longestStreak() const { return m_longestStreak; }
@@ -122,8 +118,6 @@ public:
         emit streakChanged();
     }
 
-    // ── Achievements ──
-
     const std::vector<Achievement>& achievements() const { return m_achievements; }
 
     int unlockedCount() const {
@@ -152,8 +146,6 @@ public:
         }
         return false;
     }
-
-    // ── Action triggers (called from controllers) ──
 
     void onCompanyCreated() {
         awardXP(50, "Bedrijf aangemaakt");

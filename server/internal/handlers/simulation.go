@@ -125,7 +125,6 @@ func (h *SimulationHandler) GetLeaderboard(c *gin.Context) {
 	`, schoolID).Scan(&entries)
 
 	// Sort by net profit (descending) and assign ranks
-	// Note: for proper sorting, we'd use ORDER BY in SQL, but this is simplified
 	for i := range entries {
 		entries[i].Rank = i + 1
 	}

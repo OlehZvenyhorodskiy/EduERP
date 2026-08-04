@@ -12,7 +12,6 @@
 // without any infrastructure dependency. These are the rules that must not regress.
 // ---------------------------------------------------------------------------
 
-// ── XP to Level calculation ──
 // Mirrors GamificationService::levelForXp()
 // Formula: level = floor(1 + sqrt(xp / 100))
 static int levelForXp(int xp) {
@@ -20,14 +19,12 @@ static int levelForXp(int xp) {
     return static_cast<int>(1 + std::sqrt(static_cast<double>(xp) / 100.0));
 }
 
-// ── XP required to reach a level ──
 // level N starts at (N-1)^2 * 100 XP
 static int xpForLevel(int level) {
     if (level <= 1) return 0;
     return (level - 1) * (level - 1) * 100;
 }
 
-// ── Streak calculation ──
 // Given last login date string "YYYY-MM-DD" and today's date, determine new streak.
 // Returns: 0 = broken, streak+1 = continued, 1 = first login
 static int computeNewStreak(int currentStreak, bool loggedYesterday) {

@@ -57,7 +57,6 @@ func main() {
 	// API v1 group
 	v1 := router.Group("/api/v1")
 	{
-		// ── Auth endpoints (rate-limited, no JWT required) ──
 		auth := v1.Group("/auth")
 		auth.Use(middleware.RateLimit(10, time.Minute)) // 10 attempts/min per IP
 		{
@@ -67,7 +66,6 @@ func main() {
 			auth.POST("/logout", middleware.RequireAuth(cfg.JWTSecret), authHandler.Logout)
 		}
 
-		// ── Protected endpoints ──
 		protected := v1.Group("")
 		protected.Use(middleware.RequireAuth(cfg.JWTSecret))
 		{
@@ -120,7 +118,6 @@ func main() {
 			protected.POST("/gamification/achievements", gamHandler.UnlockAchievement)
 			protected.GET("/gamification/leaderboard", gamHandler.GetLeaderboardByXP)
 
-			// ── GDPR: Right to Erasure (Article 17) ──
 			// Permanently deletes all personal data for the authenticated user.
 			// Cascades to: sessions, gamification state, achievements, messages, friends.
 			protected.DELETE("/account", func(c *gin.Context) {

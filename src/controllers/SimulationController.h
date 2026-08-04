@@ -52,7 +52,6 @@ public:
                 this, &SimulationController::onSimulationEvent);
     }
 
-    // ── Property getters ──
     bool isRunning() const { return m_isRunning; }
     bool hasActiveSimulation() const { return m_activeCompanyId > 0; }
     int speed() const { return m_speed; }
@@ -75,8 +74,6 @@ public:
         }
         emit speedChanged();
     }
-
-    // ── Q_INVOKABLE actions for QML ──
 
     Q_INVOKABLE void createAndStartSimulation(int companyId, const QString& industryTemplate) {
         if (!m_service) return;
@@ -107,7 +104,6 @@ public:
         }
     }
 
-    // ── Finance actions ──
     Q_INVOKABLE void recordTransaction(const QString& description, double amount,
                                        const QString& debitAccount, const QString& creditAccount)
     {
@@ -126,7 +122,6 @@ public:
         }
     }
 
-    // ── HR actions ──
     Q_INVOKABLE void hireEmployee(const QString& name, const QString& department,
                                   const QString& position, double salary)
     {
@@ -154,7 +149,6 @@ public:
         }
     }
 
-    // ── Inventory actions ──
     Q_INVOKABLE void addProduct(const QString& sku, const QString& name,
                                 double costPrice, double sellingPrice, int initialStock)
     {
@@ -176,7 +170,6 @@ public:
         }
     }
 
-    // ── Sales actions ──
     Q_INVOKABLE void createSalesOrder(int customerId, double amount) {
         if (!m_service) return;
         auto* engine = m_service->getEngine(m_activeCompanyId);
@@ -193,7 +186,6 @@ public:
         }
     }
 
-    // ── Marketing actions ──
     Q_INVOKABLE void launchCampaign(const QString& name, const QString& type,
                                     double budget, int durationDays)
     {
@@ -212,7 +204,6 @@ public:
         }
     }
 
-    // ── Logistics actions ──
     Q_INVOKABLE void createShipment(int orderId, const QString& origin, const QString& destination,
                                     double weight)
     {
